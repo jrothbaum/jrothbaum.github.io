@@ -33,9 +33,7 @@
             
             
             populateMasterDropDown(default_type + default_ci);
-            waitForPlotsReady(() => {
-                hide_unneeded_dropdown_elements();
-            });
+        
             if (url_params.has('group')) {
                 if (url_params.has('group')) {
                     document.getElementById('news_group').value = url_params.get('group');
@@ -45,27 +43,7 @@
             
         }
 
-        function waitForPlotsReady(callback, maxAttempts = 50) {
-            let attempts = 0;
-            
-            function check() {
-                attempts++;
-                const allReady = Object.values(PLOT_IDS).every(plotId => {
-                    const plot_div = document.getElementById(plotId);
-                    return plot_div && plot_div._fullLayout;
-                });
-                
-                if (allReady) {
-                    callback();
-                } else if (attempts < maxAttempts) {
-                    setTimeout(check, 100);
-                } else {
-                    console.error('Plots failed to initialize after', maxAttempts, 'attempts');
-                }
-            }
-            
-            check();
-        }
+        
         
         function showChart_click() {
             const chart_type = document.getElementById('news_type').value;
@@ -78,7 +56,7 @@
             
             //  Hide all
             document.querySelectorAll('.news-plot-container').forEach(container => {
-                    container.classList.remove('active');
+                container.classList.remove('active');
             });
             
             
