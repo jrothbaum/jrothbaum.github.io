@@ -6,6 +6,8 @@
 # `jekyll serve -l -H localhost`. If you change this file, please restart the 
 # server process.
 
+environment: development
+
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
@@ -345,4 +347,6 @@ tag_archive:
 #     tag: /tags/:name/
 
 
-
+# HTML Compression
+# - http://jch.penibelst.de/
+compress_html: false
