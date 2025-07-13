@@ -1,0 +1,34 @@
+# .github/workflows/jekyll.yml
+
+name: Build and Deploy Jekyll Site
+
+on:
+  # Runs on pushes to the main branch
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby and Jekyll 💎
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1' # Or the Ruby version you prefer
+          bundler-cache: true # Caches gems for faster builds
+
+      - name: Build Site (No Minification) 🛠️
+        # This is the key step: setting JEKYLL_ENV to development
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: development
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site # The folder Jekyll builds to
