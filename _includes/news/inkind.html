@@ -54,14 +54,13 @@
         function showChart(id) {
             current_plot = PLOT_IDS[id];
             
-            //  Hide all
+            // Hide all
             document.querySelectorAll('.news-plot-container').forEach(container => {
                 container.classList.remove('active');
             });
             
-            
             select_plotly_buttons();
-            //  Get the element to show
+            // Get the element to show
             document.getElementById(id).classList.add('active');
         }
         
