@@ -17,7 +17,7 @@ Working with data across programs can be a pain.  So I made a tool to load SAS d
 This is a Polars IO plugin to read SAS (sas7bdat), Stata (dta), and SPSS (sav) files.
 It is generally as fast or faster than pandas and pyreadstat, particularly for SAS files and reading subsets of columns from files.
 
-Available on [PyPi](https://pypi.org/search/?q=polars-readstat).
+Available on [PyPi](https://pypi.org/project/polars-readstat/).
 
 
 ### [pq/stata-parquet-io](https://github.com/jrothbaum/stata_parquet_io/)
