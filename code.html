@@ -19,7 +19,7 @@
 
 
 
-<title>Portfolio - Jon Rothbaum / Personal Website</title>
+<title>Public Code Repositories - Jon Rothbaum / Personal Website</title>
 
 
 
@@ -30,7 +30,7 @@
 
 
 
-  <link rel="canonical" href="https://jrothbaum.github.io//portfolio/">
+  <link rel="canonical" href="https://jrothbaum.github.io//code.html">
 
 
 
@@ -65,11 +65,11 @@
 <!-- Open Graph protocol data (https://ogp.me/), used by social media -->
 <meta property="og:locale" content="en-US">
 <meta property="og:site_name" content="Jon Rothbaum / Personal Website"> 
-<meta property="og:title" content="Portfolio">
+<meta property="og:title" content="Public Code Repositories">
 
 
 
-  <meta property="og:url" content="https://jrothbaum.github.io//portfolio/">
+  <meta property="og:url" content="https://jrothbaum.github.io//code.html">
 
 
 
@@ -150,6 +150,8 @@
 </div>
 
     
+
+
 
 
 
@@ -252,81 +254,82 @@
   </div>
 
 
-  <div class="archive">
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Public Code Repositories">
     
-      <h1 class="page__title">Portfolio</h1>
     
-    
-
-
-
-  
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
     
 
-    <h2 class="archive__item-title" itemprop="headline">
+    <div class="page__inner-wrap">
       
-        <a href="https://jrothbaum.github.io//portfolio/portfolio-1/" rel="permalink">Portfolio item number 1
-</a>
+        <header>
+          <h1 class="page__title" itemprop="headline">Public Code Repositories
+</h1>
+          
+        
+        
+            
+        </header>
       
-    </h2>
-    
-    
+
+      <section class="page__content" itemprop="text">
+        <h2 id="io-tools">I/O Tools</h2>
+
+<p>Working with data across programs can be a pain.  So I made a tool to load SAS data in  <a href="https://pola.rs/">Polars</a> and to use parquet files in Stata.</p>
+
+<h3 id="polars-readstat"><a href="https://github.com/jrothbaum/polars_readstat">polars-readstat</a></h3>
+
+<p>This is a Polars IO plugin to read SAS (sas7bdat), Stata (dta), and SPSS (sav) files.
+It is generally as fast or faster than pandas and pyreadstat, particularly for SAS files and reading subsets of columns from files.</p>
+
+<p>Available on <a href="https://pypi.org/search/?q=polars-readstat">PyPi</a>.</p>
+
+<h3 id="pqstata-parquet-io"><a href="https://github.com/jrothbaum/stata_parquet_io/">pq/stata-parquet-io</a></h3>
+
+<p>pq is a Stata package that enables reading and writing Parquet files directly in Stata. This plugin bridges the gap between Stata’s data analysis capabilities and the increasingly popular Parquet file format, which is optimized for storage and performance with large datasets.  This is slower than reading/writing a dta file in Stata (Stata is really good at that), but makes it easier to use Stata in multi-language workflows (using dta files is slow in R and Python).  It can be as fast as Stata when loading a small subset of columns from large files.</p>
+
+<p>Available on <a href="https://ideas.repec.org/c/boc/bocode/s459458.html">SSC</a></p>
+
+<h2 id="tools-for-non-representative-survey-data-coming-soon">Tools for non-representative survey data (Coming soon)</h2>
+<p>I’ve been trying to take advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the <a href="/news.html">NEWS project</a> to address missing data issues that can bias estimates from survey AND administrative data.</p>
+
+<p>These tools will include a super fast algorithm for calibration to reweight a dataset to make it representative (hat tip to Carl Sanders’s <a href="https://github.com/uscensusbureau/entropy-balance-weighting">entropy-balance-weighting</a> package).  Calibration can help address nonresponse bias in survey data (see <a href="https://www.census.gov/newsroom/blogs/research-matters/2025/09/administrative-data-nonresponse-bias-cps-asec.html">this blog</a>, <a href="https://www.census.gov/library/working-papers/2020/demo/SEHSD-WP2020-10.html">this paper on the CPS ASEC</a>, or <a href="https://www.census.gov/content/dam/Census/library/working-papers/2021/acs/2021_Rothbaum_01.pdf">this paper on the ACS</a>) and representativeness in administrative data.</p>
+
+<p>The package will also include tools to use machine learning (<a href="https://lightgbm.readthedocs.io/en/stable/">LightGBM</a>) to impute for missing data.  This can be useful in addressing nonrandom nonresponse in <a href="https://academic.oup.com/jssam/article-abstract/10/1/81/5943180">survey data</a> and <a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20221040">missing administrative data</a>.</p>
+
+<p>It has tools for simpler imputation as well (hot deck/stat match, regression-based imputation, etc.) and to generate multiple imputation statistics with bootstrap or replicate weights and easily make comparisons.</p>
+
+<p>The package uses <a href="https://narwhals-dev.github.io/narwhals/">Narwhals</a> to be (mostly) dataframe agnostic - which means you pass in a Pandas dataframe (or polars or duckdb, etc.) and that’s what you get back.  It does require polars and pyarrow, unfortunately, because there’s some logic that I couldn’t do in Narwhals.</p>
+
+<p>When complete, I’ll push this python package to PyPi.</p>
+
 
         
 
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>Short description of portfolio item number 1<br /><img src="/images/500x300.png" /></p>
-</p>
-    
-    
-    
+        
+      </section>
 
-  </article>
-</div>
-
-
-  
-
-
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    
-
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="https://jrothbaum.github.io//portfolio/portfolio-2/" rel="permalink">Portfolio item number 2
-</a>
-      
-    </h2>
-    
-    
-
+      <footer class="page__meta">
+        
         
 
-    
-    <p class="archive__item-excerpt" itemprop="description"><p>Short description of portfolio item number 2 <br /><img src="/images/500x300.png" /></p>
-</p>
-    
-    
-    
 
+
+
+      </footer>
+
+      
+
+      
+
+
+    </div>
+
+    
   </article>
-</div>
 
-
-
-
-  </div>
+  
+  
 </div>
 
 
