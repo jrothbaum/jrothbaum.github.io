@@ -26,7 +26,7 @@ pq is a Stata package that enables reading and writing Parquet files directly in
 
 Available on [SSC](https://ideas.repec.org/c/boc/bocode/s459458.html)
 
-Tools for non-representative survey data (Coming soon)
+Tools for missing data issues (Coming soon)
 ----------------------------------
 I've been trying to take advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the [NEWS project](/news.html) to address missing data issues that can bias estimates from survey AND administrative data.
 
