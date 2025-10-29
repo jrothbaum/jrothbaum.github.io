@@ -16,4 +16,7 @@ main:
     
   - title: "NEWS Project"
     url: /news.html
+  
+  - title: "Code"
+    url: /code.html
     
