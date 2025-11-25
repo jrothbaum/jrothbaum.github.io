@@ -290,10 +290,13 @@ It is generally as fast or faster than pandas and pyreadstat, particularly for S
 
 <p>Available on <a href="https://ideas.repec.org/c/boc/bocode/s459458.html">SSC</a></p>
 
-<h2 id="tools-for-missing-data-issues-coming-soon">Tools for missing data issues (Coming soon)</h2>
-<p>I’ve been trying to take advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the <a href="/news.html">NEWS project</a> to address missing data issues that can bias estimates from survey AND administrative data.</p>
+<h2 id="tools-for-missing-data-problems">Tools for Missing Data Problems</h2>
 
-<p>These tools will include a super fast algorithm for calibration to reweight a dataset to make it representative (hat tip to <a href="https://scholar.google.com/citations?user=L2CttswAAAAJ&amp;hl=en">Carl Sanders’s</a> <a href="https://github.com/uscensusbureau/entropy-balance-weighting">entropy-balance-weighting</a> package).  Calibration can help address nonresponse bias in survey data (see <a href="https://www.census.gov/newsroom/blogs/research-matters/2025/09/administrative-data-nonresponse-bias-cps-asec.html">this blog</a>, <a href="https://www.census.gov/library/working-papers/2020/demo/SEHSD-WP2020-10.html">this paper on the CPS ASEC</a>, or <a href="https://www.census.gov/content/dam/Census/library/working-papers/2021/acs/2021_Rothbaum_01.pdf">this paper on the ACS</a>) and representativeness in administrative data.</p>
+<h3 id="survey-kit"><a href="https://github.com/jrothbaum/survey_kit/">Survey-Kit</a></h3>
+
+<p>I took advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the <a href="/news.html">NEWS project</a> to address missing data issues that can bias estimates from survey AND administrative data.</p>
+
+<p>Survey-kit includes a super fast algorithm for calibration to reweight a dataset to make it representative (hat tip to <a href="https://scholar.google.com/citations?user=L2CttswAAAAJ&amp;hl=en">Carl Sanders’s</a> <a href="https://github.com/uscensusbureau/entropy-balance-weighting">entropy-balance-weighting</a> package).  Calibration can help address nonresponse bias in survey data (see <a href="https://www.census.gov/newsroom/blogs/research-matters/2025/09/administrative-data-nonresponse-bias-cps-asec.html">this blog</a>, <a href="https://www.census.gov/library/working-papers/2020/demo/SEHSD-WP2020-10.html">this paper on the CPS ASEC</a>, or <a href="https://www.census.gov/content/dam/Census/library/working-papers/2021/acs/2021_Rothbaum_01.pdf">this paper on the ACS</a>) and representativeness in administrative data.</p>
 
 <p>The package will also include tools to use machine learning (<a href="https://lightgbm.readthedocs.io/en/stable/">LightGBM</a>) to impute for missing data.  This can be useful in addressing nonrandom nonresponse in <a href="https://academic.oup.com/jssam/article-abstract/10/1/81/5943180">survey data</a> and <a href="https://www.aeaweb.org/articles?id=10.1257/pandp.20221040">missing administrative data</a>.</p>
 
@@ -301,7 +304,7 @@ It is generally as fast or faster than pandas and pyreadstat, particularly for S
 
 <p>The package uses <a href="https://narwhals-dev.github.io/narwhals/">Narwhals</a> to be (mostly) dataframe agnostic - which means you pass in a Pandas dataframe (or polars or duckdb, etc.) and that’s what you get back.  It does require polars and pyarrow, unfortunately, because there’s some logic that I couldn’t do in Narwhals.</p>
 
-<p>When complete, I’ll push this python package to PyPi.</p>
+<p>Available on <a href="https://pypi.org/project/survey-kit/">PyPi</a>, with <a href="https://jrothbaum.github.io/survey_kit/">documentation</a>.</p>
 
 
         
@@ -375,7 +378,7 @@ It is generally as fast or faster than pandas and pyreadstat, particularly for S
 
 <div class="page__footer-copyright">
   &copy; 2025 Jon Rothbaum, Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated 2025-10-29
+  Site last updated 2025-11-25
 </div>
 
       </footer>
