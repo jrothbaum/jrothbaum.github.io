@@ -26,11 +26,15 @@ pq is a Stata package that enables reading and writing Parquet files directly in
 
 Available on [SSC](https://ideas.repec.org/c/boc/bocode/s459458.html)
 
-Tools for missing data issues (Coming soon)
-----------------------------------
-I've been trying to take advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the [NEWS project](/news.html) to address missing data issues that can bias estimates from survey AND administrative data.
 
-These tools will include a super fast algorithm for calibration to reweight a dataset to make it representative (hat tip to [Carl Sanders's](https://scholar.google.com/citations?user=L2CttswAAAAJ&hl=en) [entropy-balance-weighting](https://github.com/uscensusbureau/entropy-balance-weighting) package).  Calibration can help address nonresponse bias in survey data (see [this blog](https://www.census.gov/newsroom/blogs/research-matters/2025/09/administrative-data-nonresponse-bias-cps-asec.html), [this paper on the CPS ASEC](https://www.census.gov/library/working-papers/2020/demo/SEHSD-WP2020-10.html), or [this paper on the ACS](https://www.census.gov/content/dam/Census/library/working-papers/2021/acs/2021_Rothbaum_01.pdf)) and representativeness in administrative data.
+Tools for Missing Data Problems
+-------------------------------
+
+### [Survey-Kit](https://github.com/jrothbaum/survey_kit/)
+
+I took advantage of the extended shutdown of 2025 to make some tools available that mirror what I use on the [NEWS project](/news.html) to address missing data issues that can bias estimates from survey AND administrative data.
+
+Survey-kit includes a super fast algorithm for calibration to reweight a dataset to make it representative (hat tip to [Carl Sanders's](https://scholar.google.com/citations?user=L2CttswAAAAJ&hl=en) [entropy-balance-weighting](https://github.com/uscensusbureau/entropy-balance-weighting) package).  Calibration can help address nonresponse bias in survey data (see [this blog](https://www.census.gov/newsroom/blogs/research-matters/2025/09/administrative-data-nonresponse-bias-cps-asec.html), [this paper on the CPS ASEC](https://www.census.gov/library/working-papers/2020/demo/SEHSD-WP2020-10.html), or [this paper on the ACS](https://www.census.gov/content/dam/Census/library/working-papers/2021/acs/2021_Rothbaum_01.pdf)) and representativeness in administrative data.
 
 The package will also include tools to use machine learning ([LightGBM](https://lightgbm.readthedocs.io/en/stable/)) to impute for missing data.  This can be useful in addressing nonrandom nonresponse in [survey data](https://academic.oup.com/jssam/article-abstract/10/1/81/5943180) and [missing administrative data](https://www.aeaweb.org/articles?id=10.1257/pandp.20221040).
 
@@ -38,4 +42,4 @@ It has tools for simpler imputation as well (hot deck/stat match, regression-bas
 
 The package uses [Narwhals](https://narwhals-dev.github.io/narwhals/) to be (mostly) dataframe agnostic - which means you pass in a Pandas dataframe (or polars or duckdb, etc.) and that's what you get back.  It does require polars and pyarrow, unfortunately, because there's some logic that I couldn't do in Narwhals.
 
-When complete, I'll push this python package to PyPi.
+Available on [PyPi](https://pypi.org/project/survey-kit/), with [documentation](https://jrothbaum.github.io/survey_kit/).
